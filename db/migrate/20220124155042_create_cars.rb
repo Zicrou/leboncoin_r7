@@ -3,9 +3,9 @@ class CreateCars < ActiveRecord::Migration[7.0]
     create_table :cars do |t|
       t.string :marque
       t.string :modele
-      t.integer :price
+      t.bigint :price
       t.date :year
-      t.integer :distance
+      t.bigint :distance
       t.string :color
       t.text :description
       t.string :insider_car_image
