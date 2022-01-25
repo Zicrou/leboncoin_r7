@@ -3,6 +3,8 @@ class Car < ApplicationRecord
     
     has_rich_text :description
     
+    has_many :discussions
+    
     has_one_attached :insider_car_image
     has_one_attached :front_car_image
     has_one_attached :profil_car_image

@@ -2,6 +2,8 @@
 
 <%= render @car %>
 
+<%= render "cars/discussions", car: @car %>
+
 <div>
   <%= link_to "Edit this car", edit_car_path(@car) %> |
   <%= link_to "Back to cars", cars_path %>
