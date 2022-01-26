@@ -2,11 +2,10 @@ require "test_helper"
 
 class DiscussionsMailerTest < ActionMailer::TestCase
   test "submitted" do
-    mail = DiscussionsMailer.submitted
-    assert_equal "Submitted", mail.subject
-    assert_equal ["to@example.org"], mail.to
+    mail = DiscussionsMailer.submitted discussions(:one)
+    assert_equal "New discussion!", mail.subject
+    assert_equal ["aazseck@gmail.com"], mail.to
     assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
   end
 
 end
