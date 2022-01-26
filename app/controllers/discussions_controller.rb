@@ -2,8 +2,9 @@ class DiscussionsController < ApplicationController
     before_action :set_car
 
     def create
-        @car.discussions.create! params.required(:discussion).permit(:content)
-        redirect_to @cars
+        discussion = @car.discussions.create! params.required(:discussion).permit(:content)
+        DiscussionsMailer.submitted(discussion).deliver_later
+        redirect_to @car    
     end
 
     private
